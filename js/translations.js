@@ -15,13 +15,13 @@ window.translations = {
     nav_contact:  'Kontakt',
 
     // Hero
-    hero_headline:     'Ihre Werkstatt in Meran',
+    hero_headline:     'Ihre Werkstatt in\nMeran',
     hero_subline:      'Werkstatt · Karosserie · Camper · Autohandel',
     hero_cta_vehicles: 'Fahrzeuge entdecken',
     hero_cta_contact:  'Kontakt',
 
     // Services
-    ford_badge:               'Autorisierte Ford-Werkstätte',
+    ford_badge:               'Autorisierte Ford Werkstätte',
     services_title:           'Unsere Leistungen',
     service_buy_title:        'KFZ-Service',
     service_buy_desc:         'Hoch motivierte und qualifizierte Mitarbeiter bürgen für den bestmöglichen Service bei allen Automarken.',
@@ -100,7 +100,7 @@ window.translations = {
     contact_hours_sat:     'Sa: nach Vereinbarung',
 
     // Footer
-    footer_copy:        '© 2025 Top Garage. Alle Rechte vorbehalten.',
+    footer_copy:        '© 2026 Top Garage. Alle Rechte vorbehalten.',
     footer_links_title: 'Seiten',
     footer_impressum:   'Impressum',
     footer_datenschutz: 'Datenschutz',
@@ -118,7 +118,7 @@ window.translations = {
     nav_about:    'Chi siamo',
     nav_contact:  'Contatto',
 
-    hero_headline:     'La vostra officina a Merano',
+    hero_headline:     'La vostra officina\na Merano',
     hero_subline:      'Officina · Carrozzeria · Camper · Autohandel',
     hero_cta_vehicles: 'Scopri i veicoli',
     hero_cta_contact:  'Contatto',
@@ -195,7 +195,7 @@ window.translations = {
     contact_hours_detail:  'Lun–Ven: 08:00–12:00 / 14:00–18:00',
     contact_hours_sat:     'Sab: su appuntamento',
 
-    footer_copy:        '© 2025 Top Garage. Tutti i diritti riservati.',
+    footer_copy:        '© 2026 Top Garage. Tutti i diritti riservati.',
     footer_links_title: 'Pagine',
     footer_impressum:   'Impronta',
     footer_datenschutz: 'Privacy',
@@ -212,7 +212,7 @@ window.translations = {
     nav_about:    'About',
     nav_contact:  'Contact',
 
-    hero_headline:     'Your Workshop in Merano',
+    hero_headline:     'Your Workshop\nin Merano',
     hero_subline:      'Workshop · Body Shop · Camper · Car Sales',
     hero_cta_vehicles: 'Discover vehicles',
     hero_cta_contact:  'Contact',
@@ -289,7 +289,7 @@ window.translations = {
     contact_hours_detail:  'Mon–Fri: 08:00–12:00 / 14:00–18:00',
     contact_hours_sat:     'Sat: by appointment',
 
-    footer_copy:        '© 2025 Top Garage. All rights reserved.',
+    footer_copy:        '© 2026 Top Garage. All rights reserved.',
     footer_links_title: 'Pages',
     footer_impressum:   'Imprint',
     footer_datenschutz: 'Privacy',
