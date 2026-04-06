@@ -87,7 +87,11 @@
 
     setTimeout(() => {
       const interval = setInterval(() => {
-        title.insertBefore(document.createTextNode(text[i]), cursor);
+        if (text[i] === '\n') {
+          title.insertBefore(document.createElement('br'), cursor);
+        } else {
+          title.insertBefore(document.createTextNode(text[i]), cursor);
+        }
         i++;
 
         if (i >= text.length) {
@@ -99,9 +103,9 @@
             // data-i18n wiederherstellen (für spätere Sprachänderungen)
             if (i18nKey) title.setAttribute('data-i18n', i18nKey);
             // Subline + CTAs einblenden
-            fadeIn(subtitle, 200);
-            fadeIn(actions,  350);
-          }, 500);
+            fadeIn(subtitle, 80);
+            fadeIn(actions,  180);
+          }, 200);
         }
       }, speed);
     }, 350);
