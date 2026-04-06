@@ -41,12 +41,12 @@ async function loadComponents() {
     });
   }
 
-  // ── Logo + Start link → always navigate to root (index.html lives at /)
+  // ── Logo + Start link → relative navigation (works on any host/subpath)
   document.querySelectorAll(
     '.navbar__logo, .navbar__desktop-links a[href="index.html"], .navbar__menu a[href="index.html"]'
   ).forEach(el => el.addEventListener('click', e => {
     e.preventDefault();
-    window.location.href = window.location.origin + '/';
+    window.location.href = 'index.html';
   }));
 
   // ── Initialise navbar interactions (burger menu, lang buttons)
