@@ -1,0 +1,88 @@
+// ─────────────────────────────────────────
+// TONAL ACOUSTIC DUO — Legal Pages
+// (Impressum + Datenschutz)
+// ─────────────────────────────────────────
+
+@use 'variables' as *;
+
+// Short hero (no background image, dark)
+.page-hero--short {
+  min-height: 28vh;
+  background: $color-dark;
+
+  .page-hero-title {
+    font-size: clamp(2rem, 6vw, 4rem);
+  }
+}
+
+// Content area
+#legal-content {
+  @include section-padding;
+  background: $color-bg;
+}
+
+.legal-inner {
+  @include container;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.legal-section {
+  h2 {
+    font-family: $font-headline;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    color: $color-text;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $color-border;
+  }
+
+  h3 {
+    font-family: $font-headline;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $color-text;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: $color-muted;
+    line-height: 1.8;
+  }
+
+  a {
+    color: $color-accent;
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+
+    li {
+      font-size: 0.9rem;
+      color: $color-muted;
+      line-height: 1.7;
+      padding-left: 1rem;
+      position: relative;
+
+      &::before {
+        content: '–';
+        position: absolute;
+        left: 0;
+        color: $color-accent;
+      }
+    }
+  }
+}

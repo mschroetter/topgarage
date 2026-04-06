@@ -1,0 +1,253 @@
+// ─────────────────────────────────────────
+// TOP GARAGE — Navigation
+// Option A: Volle Breite, solid weiß, kein Glasmorphismus
+// ─────────────────────────────────────────
+
+@use 'variables' as *;
+
+// ── Basis
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: $color-bg;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              opacity 0.3s ease;
+
+  &.is-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform $duration-fast ease-in,
+                opacity $duration-instant ease;
+  }
+}
+
+// ─────────────────────────────────────────
+// MOBILE  ≤ 1023px
+// ─────────────────────────────────────────
+@media (max-width: 1023px) {
+
+  .navbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    height: 60px;
+  }
+
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 24px;
+      width: auto;
+      display: block;
+      // kein Filter — Logo hat eigene Farben (Blau + Grau)
+    }
+  }
+
+  // Burger button
+  .navbar__burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: $color-text;
+      border-radius: 2px;
+      transition: transform $duration-base ease, opacity $duration-base ease;
+      transform-origin: center;
+    }
+  }
+
+  // Burger → X
+  .navbar.is-open .navbar__burger {
+    span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  }
+
+  .navbar__desktop-links { display: none; }
+
+  // Mobile menu
+  .navbar__menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    background: $color-bg;
+    border-top: 1px solid transparent;
+    transition: max-height $duration-base ease, border-color $duration-base ease;
+  }
+
+  .navbar.is-open .navbar__menu {
+    max-height: 420px;
+    border-top-color: $color-border;
+  }
+
+  .navbar__menu a {
+    display: block;
+    font-family: $font-headline;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $color-text;
+    text-decoration: none;
+    padding: 12px 0;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity $duration-base ease, transform $duration-base ease, color $duration-fast ease;
+
+    &:hover { color: $color-accent; }
+    &.active {
+      color: $color-accent;
+      border-bottom: 2px solid $color-accent;
+    }
+  }
+
+  .navbar.is-open .navbar__menu a { opacity: 1; transform: translateY(0); }
+  .navbar.is-open .navbar__menu a:nth-child(1) { transition-delay: 0ms; }
+  .navbar.is-open .navbar__menu a:nth-child(2) { transition-delay: 60ms; }
+  .navbar.is-open .navbar__menu a:nth-child(3) { transition-delay: 120ms; }
+  .navbar.is-open .navbar__menu a:nth-child(4) { transition-delay: 180ms; }
+
+  // Mobile lang switcher
+  .navbar__lang-mobile {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 12px;
+    padding-bottom: 16px;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity $duration-base ease 240ms, transform $duration-base ease 240ms;
+  }
+
+  .navbar.is-open .navbar__lang-mobile {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .navbar__lang-mobile .lang-btn {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: $color-muted;
+    padding: 4px 6px;
+    transition: color $duration-fast ease;
+
+    &:hover, &.active { color: $color-text; }
+  }
+
+  .navbar__lang-mobile .lang-divider {
+    color: $color-border;
+    font-size: 0.7rem;
+    user-select: none;
+  }
+}
+
+// ─────────────────────────────────────────
+// DESKTOP  ≥ 1024px
+// ─────────────────────────────────────────
+@media (min-width: 1024px) {
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4rem;
+    height: 68px;
+  }
+
+  .navbar__inner {
+    display: contents;
+  }
+
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      height: 28px;
+      width: auto;
+      display: block;
+      // kein Filter — Logo hat eigene Farben (Blau + Grau)
+    }
+  }
+
+  .navbar__burger { display: none; }
+  .navbar__menu   { display: none; }
+
+  .navbar__desktop-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+
+    a {
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: $color-text;
+      text-decoration: none;
+      padding-bottom: 4px;
+
+      // Aktiv-Linie via background (gleicher Ansatz wie Buttons)
+      background-image: linear-gradient($color-accent, $color-accent);
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      background-size: 0% 2px;
+      transition: color $duration-fast ease, background-size $duration-fast ease;
+
+      &:hover {
+        color: $color-accent;
+        background-size: 100% 2px;
+      }
+      &.active {
+        color: $color-accent;
+        background-size: 100% 2px;
+      }
+    }
+  }
+
+  .navbar__separator { display: none; } // nicht mehr nötig
+
+  // Desktop lang switcher
+  .lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .lang-btn {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: $color-muted;
+    padding: 2px 4px;
+    transition: color $duration-fast ease;
+
+    &:hover, &.active { color: $color-text; }
+  }
+
+  .lang-divider {
+    color: $color-border;
+    font-size: 0.75rem;
+    user-select: none;
+  }
+}

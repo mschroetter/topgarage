@@ -1,0 +1,131 @@
+// ─────────────────────────────────────────
+// TOP GARAGE — Kontakt Page
+// ─────────────────────────────────────────
+
+@use 'variables' as *;
+
+#contact {
+  @include section-padding;
+  background: $color-bg;
+}
+
+.contact-inner {
+  @include container;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 5rem;
+  align-items: start;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+// ── Form column
+.contact-form-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $color-muted;
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    background: $color-surface;
+    color: $color-text;
+    font-family: $font-body;
+    font-size: 0.9rem;
+    @include transition(border-color, box-shadow);
+    appearance: none;
+
+    &:focus {
+      outline: none;
+      border-color: $color-accent;
+      box-shadow: 0 0 0 3px rgba(232, 75, 26, 0.1);
+    }
+
+    &::placeholder { color: $color-muted; }
+  }
+
+  textarea { resize: vertical; min-height: 130px; }
+}
+
+.form-success { color: $color-success; font-size: 0.875rem; }
+.form-error   { color: $color-error;   font-size: 0.875rem; }
+
+// ── Info column
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  p, a {
+    font-size: 0.95rem;
+    color: $color-text;
+    line-height: 1.6;
+    text-decoration: none;
+  }
+
+  a:hover { color: $color-accent; }
+}
+
+.contact-info-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-muted;
+}
+
+// ── Map
+.contact-map {
+  border-radius: $radius-md;
+  overflow: hidden;
+  border: 1px solid $color-border;
+}

@@ -1,0 +1,17 @@
+// ─────────────────────────────────────────
+// TOP GARAGE — Common Styles
+// Shared across all pages: nav, footer,
+// reset, buttons, typography, animations,
+// shared components, legal, cars
+// ─────────────────────────────────────────
+
+@use 'variables' as *;
+@use 'reset';
+@use 'typography';
+@use 'buttons';
+@use 'nav';
+@use 'footer';
+@use 'animations';
+@use 'shared';
+@use 'legal';
+@use 'cars';

@@ -1,0 +1,95 @@
+// ─────────────────────────────────────────
+// TONAL ACOUSTIC DUO — Shared Styles
+// Shared across all subpages (about, contact, work)
+// ─────────────────────────────────────────
+
+@use 'variables' as *;
+
+// ── Page Hero (fahrzeuge, ueber-uns, kontakt)
+// TODO: Bei Foto-Lieferung .page-hero-bg und .page-hero-overlay aktivieren
+.page-hero {
+  position: relative;
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  background: $color-accent;
+  overflow: hidden;
+  padding-top: 68px; // Navbar-Höhe
+}
+
+/* TODO (Foto): aktivieren wenn Bild vorhanden
+.page-hero-bg {
+  @include absolute-fill;
+  object-fit: cover;
+  opacity: 0.25;
+}
+
+.page-hero-overlay {
+  @include absolute-fill;
+  background: linear-gradient(
+    to bottom,
+    rgba($color-accent, 0.6),
+    rgba($color-accent, 0.9)
+  );
+}
+*/
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  @include container;
+  padding-bottom: clamp(3rem, 5vw, 5rem);
+  padding-top: clamp(3rem, 5vw, 5rem);
+  width: 100%;
+}
+
+.page-hero-title {
+  font-family: $font-headline;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 7vw, 6rem);
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  color: $color-white;
+  margin-top: 1rem;
+}
+
+// ── Process Steps (used on index and about)
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+
+  @media (max-width: $bp-lg) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: $bp-md) { grid-template-columns: 1fr; }
+}
+
+.process-step {
+  padding: 2rem 2rem 2rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+  @media (max-width: $bp-lg) {
+    padding: 2rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.06);
+    &:nth-child(odd) { border-left: none; padding-left: 0; }
+  }
+
+  @media (max-width: $bp-md) {
+    border-left: none;
+    padding: 2rem 0;
+  }
+
+  h3 {
+    font-family: $font-headline;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    color: $color-text;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: $color-muted;
+    line-height: 1.75;
+  }
+}

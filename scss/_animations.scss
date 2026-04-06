@@ -1,0 +1,69 @@
+// ─────────────────────────────────────────
+// TONAL ACOUSTIC DUO — Animations & Scroll Reveal
+// ─────────────────────────────────────────
+
+@use 'variables' as *;
+
+// ── Scroll Reveal base
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity $duration-xslow $ease, transform $duration-xslow $ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity $duration-slow $ease, transform $duration-slow $ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity $duration-slow $ease, transform $duration-slow $ease;
+
+  &.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// ── Staggered group
+.reveal-group {
+  > * {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity $duration-slow $ease, transform $duration-slow $ease;
+  }
+
+  &.visible {
+    @for $i from 1 through 8 {
+      > *:nth-child(#{$i}) {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: #{($i - 1) * 80}ms;
+      }
+    }
+  }
+}
+
+// ── Keyframes
+@keyframes fadeFloat {
+  0%, 100% { opacity: 0.3; transform: translateY(0); }
+  50%       { opacity: 0.6; transform: translateY(8px); }
+}
+
+@keyframes marqueeLtr {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

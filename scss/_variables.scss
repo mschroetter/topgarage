@@ -1,0 +1,98 @@
+@use 'sass:list';
+
+// ─────────────────────────────────────────
+// TOP GARAGE — Variables
+// ─────────────────────────────────────────
+
+// ── Colors
+$color-bg:      #FAFAFA;
+$color-surface: #FFFFFF;
+$color-subtle:  #F0F0F0;
+$color-text:    #1A1A1A;
+$color-muted:   #888888;
+$color-accent:  #173D86;
+$color-border:  rgba(0, 0, 0, 0.09);
+$color-dark:    #111111;
+$color-footer:  #0b1a3d; // Dunkles Navy — harmoniert mit $color-accent
+$color-white:   #FFFFFF;
+$color-success: #2d6a4f;
+$color-error:   #c0392b;
+
+// ── Typography
+$font-headline: 'Inter', system-ui, sans-serif;
+$font-display:  'Inter', system-ui, sans-serif;
+$font-body:     'Inter', system-ui, sans-serif;
+
+// ── Layout
+$container-max:  1300px;
+$header-height:  80px;
+
+// ── Border Radius
+$radius-sm:  4px;
+$radius-md:  8px;
+$radius-lg:  16px;
+$radius-xl:  24px;
+
+// ── Animation Durations
+$duration-instant: 150ms;
+$duration-fast:    200ms;
+$duration-base:    350ms;
+$duration-slow:    550ms;
+$duration-xslow:   700ms;
+$duration-marquee: 55s; // unused
+
+// ── Easing
+$ease:     cubic-bezier(.25, 0, .25, 1);
+$ease-out: cubic-bezier(0, 0, .4, 1);
+
+// ── Breakpoints
+$bp-sm:  480px;
+$bp-md:  768px;
+$bp-lg: 1200px;
+
+// ─────────────────────────────────────────
+// MIXINS
+// ─────────────────────────────────────────
+
+@mixin container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 4rem;
+
+  @media (max-width: $bp-md) {
+    padding: 0 1.5rem;
+  }
+}
+
+@mixin section-padding {
+  padding: clamp(3.5rem, 8vw, 9rem) 0;
+}
+
+@mixin transition($props...) {
+  $result: ();
+  @each $prop in $props {
+    $result: list.append($result, $prop 350ms $ease, $separator: comma);
+  }
+  transition: $result;
+}
+
+@mixin transition-fast($props...) {
+  $result: ();
+  @each $prop in $props {
+    $result: list.append($result, $prop 200ms $ease, $separator: comma);
+  }
+  transition: $result;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin absolute-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,102 @@
+// ─────────────────────────────────────────
+// TOP GARAGE — Über uns Page
+// ─────────────────────────────────────────
+
+@use 'variables' as *;
+
+// ── Story
+#story {
+  @include section-padding;
+  background: $color-bg;
+}
+
+.story-inner {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.story-image {
+  border-radius: $radius-lg;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: $color-subtle;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  p {
+    color: $color-muted;
+    line-height: 1.8;
+    font-size: 0.97rem;
+  }
+}
+
+// ── Services — zweispaltige Tabelle
+#about-services {
+  @include section-padding;
+  background: $color-bg;
+}
+
+.about-services-header {
+  @include container;
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+}
+
+.services-table {
+  @include container;
+  display: block;
+}
+
+.services-row {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid $color-border;
+  align-items: baseline;
+
+  &:last-child {
+    border-bottom: 1px solid $color-border;
+  }
+
+  &:hover .services-row__name {
+    color: $color-accent;
+  }
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+.services-row__name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: $color-text;
+  letter-spacing: -0.01em;
+  transition: color $duration-fast $ease;
+}
+
+.services-row__desc {
+  font-size: 0.9rem;
+  color: $color-muted;
+  line-height: 1.7;
+}

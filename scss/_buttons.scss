@@ -1,0 +1,84 @@
+// ─────────────────────────────────────────
+// TOP GARAGE — Buttons
+// Textlink-Stil: Versalien + animierter Balken
+// Ruhezustand: heller Balken (immer sichtbar, überlappt Textunterkante)
+// Hover: kräftigerer Balken fährt von links nach rechts ein
+// ─────────────────────────────────────────
+
+@use 'variables' as *;
+
+// ── Gemeinsame Textlink-Basis
+%btn-base {
+  display: inline-block;
+  font-family: $font-body;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  white-space: nowrap;
+  padding-bottom: 0;
+  align-self: flex-start;
+
+  // Layer [0] = Hover-Balken: startet bei 0%, fährt auf 100%
+  // Layer [1] = Rest-Balken:  immer 100% sichtbar
+  background-repeat: no-repeat, no-repeat;
+  background-position: left bottom, left bottom;
+  background-size: 0% 6px, 100% 6px;
+  transition: background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background-size: 100% 6px, 100% 6px;
+  }
+}
+
+// ── Outline: auf hellem Hintergrund (blauer Balken)
+.btn-outline {
+  @extend %btn-base;
+  color: $color-text;
+  background-image:
+    linear-gradient(rgba($color-accent, 0.25), rgba($color-accent, 0.25)),
+    linear-gradient(rgba($color-accent, 0.10), rgba($color-accent, 0.10));
+}
+
+// ── Ghost: auf blauem/dunklem Hintergrund (weißer Balken)
+.btn-outline--ghost {
+  @extend %btn-base;
+  color: $color-white;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+}
+
+// ── Primary: auf blauem/dunklem Hintergrund (weißer Balken)
+.btn-primary {
+  @extend %btn-base;
+  color: $color-white;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15));
+}
+
+// ── Form submit: ausgefüllter Button
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  border-radius: 4px;
+  background: $color-accent;
+  color: $color-white;
+  border: none;
+  font-family: $font-body;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity $duration-fast ease;
+
+  &:hover { opacity: 0.85; }
+}

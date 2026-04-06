@@ -1,0 +1,72 @@
+// ─────────────────────────────────────────
+// TONAL ACOUSTIC DUO — Typography
+// ─────────────────────────────────────────
+
+@use 'variables' as *;
+
+// ── Section label (small uppercase eyebrow)
+.section-label {
+  display: inline-block;
+  font-family: $font-body;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-muted;
+  margin-bottom: 1rem;
+}
+
+// ── Section headline
+.section-title {
+  font-family: $font-headline;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: $color-text;
+}
+
+.section-title--display {
+  font-family: $font-display;
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+// ── Hero headline
+.hero-title {
+  font-family: $font-headline;
+  font-weight: 800;
+  font-size: clamp(2.5rem, 8vw, 7rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: $color-white;
+}
+
+// ── Body text
+.body-text {
+  font-size: 1rem;
+  color: $color-muted;
+  line-height: 1.8;
+}
+
+.body-text--sm {
+  font-size: 0.875rem;
+  color: $color-muted;
+  line-height: 1.75;
+}
+
+// ── Step number — small uppercase label
+.step-number {
+  display: block;
+  font-family: $font-body;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $color-muted;
+  margin-bottom: 0.75rem;
+  user-select: none;
+}

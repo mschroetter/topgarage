@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Claude Code
+.claude/
+.agents/
+skills-lock.json
+CLOUDE.md
+
+# Sass source maps (optional: remove if you want to include them)
+css/*.map

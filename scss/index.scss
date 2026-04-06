@@ -1,0 +1,340 @@
+// ─────────────────────────────────────────
+// TOP GARAGE — Homepage
+// Stil: Editorial Minimalism (hantha-Inspiration)
+// ─────────────────────────────────────────
+
+@use 'variables' as *;
+
+// ─────────────────────────────────────────
+// HERO — Blau, weiße Typografie
+// ─────────────────────────────────────────
+
+#hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: $color-accent;
+  padding-top: 68px; // Navbar-Höhe
+}
+
+/* TODO (Foto): aktivieren wenn Fahrzeugbild vorhanden
+.hero-bg {
+  @include absolute-fill;
+  object-fit: cover;
+  object-position: center 35%;
+  opacity: 0.55;
+}
+
+.hero-overlay {
+  @include absolute-fill;
+  background: linear-gradient(
+    160deg,
+    rgba($color-accent, 0.7) 0%,
+    rgba($color-accent, 0.92) 100%
+  );
+}
+*/
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  @include container;
+  padding-top: clamp(3rem, 6vw, 6rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+  width: 100%;
+}
+
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.hero-title {
+  max-width: none;
+  margin-bottom: 2rem;
+  color: $color-white;
+  font-size: clamp(3rem, 9vw, 8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3.5rem;
+  max-width: 44ch;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+
+  @media (max-width: $bp-md) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+// ── Entrance animation
+// Eyebrow, Subline, CTAs: staggered fade-up (via JS inline styles)
+// Headline: Typewriter (via JS), hier nur opacity-Basis
+
+.hero-title {
+  opacity: 0; // JS setzt es auf 1 vor dem Typewriter-Start
+  min-height: 1em; // verhindert Layout-Sprung wenn Text leer ist
+}
+
+// Cursor-Blink
+@keyframes hero-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.hero-cursor {
+  display: inline;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  animation: hero-blink 0.7s step-end infinite;
+  margin-left: 2px;
+}
+
+// ─────────────────────────────────────────
+// SERVICES — Große klickbare Wörter (hantha-Stil)
+// ─────────────────────────────────────────
+
+#services {
+  @include section-padding;
+  background: $color-bg;
+  border-top: 1px solid $color-border;
+}
+
+.services-header {
+  @include container;
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+
+  .section-label { margin-bottom: 0.5rem; }
+
+  @media (max-width: $bp-md) {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.services-grid {
+  @include container;
+  display: block;
+}
+
+.service-card {
+  display: block;
+  padding: 1.75rem 0;
+  border-top: 1px solid $color-border;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:last-child {
+    border-bottom: 1px solid $color-border;
+  }
+
+  h3 {
+    font-family: $font-headline;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    letter-spacing: -0.03em;
+    color: $color-text;
+    line-height: 1.05;
+    transition: color $duration-fast $ease;
+
+    &::after {
+      content: '.';
+      color: $color-accent;
+    }
+  }
+
+  p {
+    display: none; // Beschreibung ausblenden — Stil ist Wort + Punkt
+  }
+
+  &:hover h3 {
+    color: $color-accent;
+  }
+
+  @media (max-width: $bp-md) {
+    h3 { font-size: clamp(1.8rem, 8vw, 3rem); }
+  }
+}
+
+// ─────────────────────────────────────────
+// FORD BADGE — Autorisierte Ford-Werkstätte
+// ─────────────────────────────────────────
+
+#ford-badge {
+  background: $color-subtle;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+  padding: 2.5rem 0;
+}
+
+.ford-badge-inner {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.ford-badge-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: $color-text;
+
+  img {
+    height: 32px;
+    width: auto;
+  }
+}
+
+.ford-badge-text {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: $color-muted;
+
+  &::before {
+    content: '—';
+    margin-right: 0.75rem;
+    color: $color-border;
+  }
+}
+
+// ─────────────────────────────────────────
+// VEHICLE HIGHLIGHTS
+// ─────────────────────────────────────────
+
+#vehicles-preview {
+  @include section-padding;
+  background: $color-bg;
+}
+
+.vehicles-header {
+  @include container;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: clamp(2.5rem, 4vw, 4rem);
+
+  @media (max-width: $bp-md) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
+
+.vehicles-preview-grid {
+  @include container;
+}
+
+// ─────────────────────────────────────────
+// ABOUT TEASER
+// ─────────────────────────────────────────
+
+#about-teaser {
+  @include section-padding;
+  background: $color-subtle;
+  border-top: 1px solid $color-border;
+}
+
+.about-teaser-inner {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.about-teaser-image {
+  position: relative;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: $color-subtle;
+
+  img {
+    @include absolute-fill;
+    object-fit: cover;
+  }
+}
+
+.about-teaser-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  .section-title { color: $color-text; }
+  p { color: $color-muted; line-height: 1.8; }
+}
+
+// ─────────────────────────────────────────
+// CTA BANNER — Blau
+// ─────────────────────────────────────────
+
+#cta {
+  position: relative;
+  overflow: hidden;
+  @include flex-center;
+  text-align: center;
+  background: $color-accent;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  @include container;
+  padding-top: clamp(4rem, 8vw, 7rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+
+  [class^="btn-"], [class*=" btn-"] { align-self: center; }
+
+  h2 {
+    font-family: $font-headline;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: $color-white;
+    max-width: 26ch;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    font-weight: 300;
+    max-width: 48ch;
+  }
+}

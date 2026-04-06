@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Top Garage Meran – Kontakt & Anfahrt. Reichstrasse 63, 39012 Meran-Sinich. Tel. 0473 449 835.">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <title>Kontakt – Top Garage Meran</title>
+
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/common.css?v=1">
+  <link rel="stylesheet" href="css/kontakt.css?v=1">
+</head>
+<body data-page="kontakt.html">
+
+  <div id="navbar-placeholder"></div>
+
+  <main>
+
+    <!-- ─── PAGE HERO ─── -->
+    <section class="page-hero" data-nav-theme="dark">
+      <img class="page-hero-bg" src="images/hero-bg.jpg" alt="">
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="section-label" style="color:rgba(255,255,255,0.45)" data-i18n="contact_page_subtitle">Wir sind für Sie da</span>
+        <h1 class="page-hero-title" data-i18n="contact_page_title">Kontakt</h1>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section id="contact" data-nav-theme="light">
+      <div class="contact-inner">
+
+        <!-- Form -->
+        <div class="contact-form-col reveal">
+          <h2 class="section-title" data-i18n="contact_form_title">Schreiben Sie uns</h2>
+
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" data-i18n="contact_name">Name</label>
+                <input type="text" id="name" name="name" required autocomplete="name"
+                       data-i18n-placeholder="contact_name">
+              </div>
+              <div class="form-group">
+                <label for="email" data-i18n="contact_email">E-Mail</label>
+                <input type="email" id="email" name="email" required autocomplete="email"
+                       data-i18n-placeholder="contact_email">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone" data-i18n="contact_phone">Telefon (optional)</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel"
+                       data-i18n-placeholder="contact_phone">
+              </div>
+              <div class="form-group">
+                <label for="subject" data-i18n="contact_subject">Betreff</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>—</option>
+                  <option value="Fahrzeugkauf"   data-i18n-option="contact_subject_buy">Fahrzeugkauf</option>
+                  <option value="Fahrzeugverkauf" data-i18n-option="contact_subject_sell">Fahrzeugverkauf</option>
+                  <option value="Werkstatttermin" data-i18n-option="contact_subject_workshop">Werkstatttermin</option>
+                  <option value="Sonstiges"       data-i18n-option="contact_subject_other">Sonstiges</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message" data-i18n="contact_message">Nachricht</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit" data-i18n="contact_send">Nachricht senden</button>
+
+            <p class="form-success" id="form-success" aria-live="polite" data-i18n="contact_success" style="display:none">
+              Vielen Dank! Wir melden uns bald bei Ihnen.
+            </p>
+            <p class="form-error" id="form-error" aria-live="polite" data-i18n="contact_error" style="display:none">
+              Fehler beim Senden. Bitte versuchen Sie es erneut.
+            </p>
+          </form>
+        </div>
+
+        <!-- Info -->
+        <div class="contact-info-col reveal">
+          <h2 class="section-title" data-i18n="contact_info_title">Kontaktdaten</h2>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item">
+              <span class="contact-info-label" data-i18n="contact_address_label">Adresse</span>
+              <p>Reichstrasse 63<br>39012 Meran-Sinich (BZ)</p>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-label">Telefon</span>
+              <p><a href="tel:+390473449835">0473 449 835</a></p>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-label">E-Mail</span>
+              <p><a href="mailto:info@topgarage.it">info@topgarage.it</a></p>
+            </div>
+            <div class="contact-info-item">
+              <span class="contact-info-label" data-i18n="contact_hours_label">Öffnungszeiten</span>
+              <p data-i18n="contact_hours_detail">Mo–Fr: 08:00–12:00 / 14:00–18:00</p>
+              <p data-i18n="contact_hours_sat">Sa: nach Vereinbarung</p>
+            </div>
+          </div>
+
+          <!-- Google Maps placeholder -->
+          <div class="contact-map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2769.5!2d11.15!3d46.67!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zTop+Garage!5e0!3m2!1sde!2sit!4v1"
+              width="100%"
+              height="280"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Top Garage Meran auf Google Maps">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/lenis.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/effects.js"></script>
+</body>
+</html>

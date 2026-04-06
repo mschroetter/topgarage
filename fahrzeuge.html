@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Top Garage Meran – Aktuelle Fahrzeuge auf AutoScout24. Gebrauchtwagen aller Marken in Meran-Sinich.">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/favicon.png">
+  <title>Fahrzeuge – Top Garage Meran</title>
+
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/common.css?v=1">
+  <link rel="stylesheet" href="css/fahrzeuge.css?v=1">
+</head>
+<body data-page="fahrzeuge.html">
+
+  <div id="navbar-placeholder"></div>
+
+  <main>
+
+    <!-- ─── PAGE HERO ─── -->
+    <section class="page-hero" data-nav-theme="dark">
+      <img class="page-hero-bg" src="images/hero-bg.jpg" alt="">
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="section-label" style="color:rgba(255,255,255,0.45)">AutoScout24</span>
+        <h1 class="page-hero-title" data-i18n="vehicles_page_title">Fahrzeuge</h1>
+      </div>
+    </section>
+
+    <!-- ─── AUTOSCOUT EMBED ─── -->
+    <section id="vehicles" data-nav-theme="light">
+      <div class="vehicles-intro reveal">
+        <p class="section-body" data-i18n="vehicles_page_subtitle">Unsere aktuellen Inserate auf AutoScout24</p>
+      </div>
+
+      <div class="vehicles-embed-container">
+        <!--
+          AutoScout24-Iframe:
+          Bitte die Dealer-URL unten durch die echte AutoScout24-Inserate-URL
+          der Top Garage ersetzen. Beispiel:
+          https://www.autoscout24.it/lst?dealerId=XXXXX
+          oder direkt die Dealer-Profilseite.
+        -->
+        <div class="autoscout-container reveal">
+          <iframe
+            src="https://www.autoscout24.it/concessionari/top-garage-srl-fraz-sinigo-merano-me"
+            title="Top Garage – Fahrzeuginserate auf AutoScout24"
+            loading="lazy"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="autoscout-fallback reveal">
+          <p data-i18n="vehicles_autoscout_hint">Direktlink zu unseren Inseraten:</p>
+          <a
+            href="https://www.autoscout24.it/concessionari/top-garage-srl-fraz-sinigo-merano-me"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+            data-i18n="vehicles_autoscout_link">
+            Auf AutoScout24 ansehen
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/lenis.min.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/effects.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+// ─────────────────────────────────────────
+// TOP GARAGE — Fahrzeuge Page
+// ─────────────────────────────────────────
+
+@use 'variables' as *;
+
+#vehicles {
+  @include section-padding;
+  background: $color-bg;
+}
+
+.vehicles-intro {
+  @include container;
+  margin-bottom: 2.5rem;
+}
+
+.vehicles-embed-container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
