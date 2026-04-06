@@ -14,11 +14,11 @@
 
 .footer-inner {
   @include container;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   gap: 4rem;
   padding-bottom: 4rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
   @media (max-width: $bp-md) {
     grid-template-columns: 1fr 1fr;
@@ -134,7 +134,6 @@
 .footer-brand {
   width: 100%;
   overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: 1.5rem 0 0;
   line-height: 1;
   // font-size and height are set by JS (fitFooterBrand)
