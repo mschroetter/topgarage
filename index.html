@@ -11,6 +11,44 @@
   <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/common.css?v=1">
   <link rel="stylesheet" href="css/index.css?v=1">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Top Garage Meran",
+    "url": "https://mschroetter.github.io/topgarage/",
+    "telephone": "+390473449835",
+    "email": "info@topgarage.it",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Reichstrasse 63",
+      "addressLocality": "Merano",
+      "addressRegion": "BZ",
+      "postalCode": "39012",
+      "addressCountry": "IT"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "14:00",
+        "closes": "18:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.6",
+      "bestRating": "5",
+      "ratingCount": "50"
+    }
+  }
+  </script>
 </head>
 <body data-page="index.html">
 
@@ -32,6 +70,12 @@
         <div class="hero-actions">
           <a href="fahrzeuge.html" class="btn-outline--ghost" data-i18n="hero_cta_vehicles">Fahrzeuge entdecken</a>
           <a href="kontakt.html"   class="btn-outline--ghost" data-i18n="hero_cta_contact">Kontakt</a>
+          <div class="hero-rating">
+            <span class="hero-rating__stars" aria-hidden="true">★★★★½</span>
+            <span class="hero-rating__score">4.6</span>
+            <a href="https://maps.google.com/?q=Top+Garage+Meran,+Reichstrasse+63,+39012+Meran-Sinich"
+               target="_blank" rel="noopener" class="hero-rating__label" data-i18n="rating_label">Google Bewertungen</a>
+          </div>
         </div>
       </div>
     </section>
