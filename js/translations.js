@@ -110,6 +110,10 @@ window.translations = {
     consent_text:    'Diese Website verwendet Cookies für eine bessere Nutzererfahrung.',
     consent_accept:  'Akzeptieren',
     consent_decline: 'Ablehnen',
+
+    // Google Rating + Sticky Call
+    rating_label: 'Google Bewertungen',
+    sticky_call:  'Anrufen',
   },
 
   it: {
@@ -204,6 +208,10 @@ window.translations = {
     consent_text:    'Questo sito utilizza cookie per migliorare l\'esperienza utente.',
     consent_accept:  'Accetta',
     consent_decline: 'Rifiuta',
+
+    // Google Rating + Sticky Call
+    rating_label: 'Recensioni Google',
+    sticky_call:  'Chiama',
   },
 
   en: {
@@ -298,5 +306,9 @@ window.translations = {
     consent_text:    'This website uses cookies for a better user experience.',
     consent_accept:  'Accept',
     consent_decline: 'Decline',
+
+    // Google Rating + Sticky Call
+    rating_label: 'Google Reviews',
+    sticky_call:  'Call',
   },
 };
