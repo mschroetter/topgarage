@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────
-   TONAL ACOUSTIC DUO — Shared Utilities
+   TOP GARAGE — Shared Utilities
    Used by: marquee.js, carousel.js
    ───────────────────────────────────────── */
 

@@ -1,5 +1,5 @@
 /* ─────────────────────────────────────────
-   TONAL ACOUSTIC DUO — Component Loader
+   TOP GARAGE — Component Loader
    Loads shared navbar & footer via fetch(),
    sets active nav link, then initialises
    navbar interactions and translations.
