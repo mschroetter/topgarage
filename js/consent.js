@@ -1,5 +1,5 @@
 (function () {
-  var KEY = 'tonal_consent';
+  var KEY = 'topgarage_consent';
 
   function loadFonts() {
     var pc = document.createElement('link');
